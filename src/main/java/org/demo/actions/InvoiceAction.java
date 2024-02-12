@@ -24,6 +24,20 @@ public class InvoiceAction extends ActionSupport  {
     public void validate() {
         if (invoiceBean.getSubject().isEmpty()) {
             addFieldError("invoiceBean.subject", "El concepto es obligatorio.");
+        if(invoiceBean.getDateFrom() == null) {
+                addFieldError("invoiceBean.dateFrom", "Este campo es obligatorio.");
+            }
+        if(invoiceBean.getDateTo() == null) {
+                addFieldError("invoiceBean.dateTo", "Este campo es obligatorio.");
+            }
+        if(invoiceBean.getDateTo() != null) {
+        if (invoiceBean.getDateTo().before(invoiceBean.getDateFrom())) {
+                    addFieldError("invoiceBean.dateTo", "Este campo es obligatorio.");
+                }
+            }
+        if(invoiceBean.getImporte() <= 0) {
+                addFieldError("invoiceBean.importe", "Este campo es obligatorio.");
+            }
         }
     }
 }

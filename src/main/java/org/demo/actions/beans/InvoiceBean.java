@@ -8,6 +8,16 @@ public class InvoiceBean {
     private Date dateFrom;
     private Date dateTo;
 
+    public double getImporte() {
+        return importe;
+    }
+
+    public void setImporte(double importe) {
+        this.importe = importe;
+    }
+
+    private double importe;
+
     public Date getDateFrom() {
         return dateFrom;
     }

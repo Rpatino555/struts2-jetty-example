@@ -12,6 +12,24 @@
 <body>
 
     <h1>Resumen de factura: </h1>
+        <s:push value="invoiceBean">
+        <div>
+            <s:text name="form.subject.message"/>
+            <s:property value="subject"/>
+        </div>
+        <div>
+            <s:text name="form.fromDate.message"/>
+            <s:property value="dateFrom"/>
+        </div>
+        <div>
+            <s:text name="form.toDate.message"/>
+            <s:property value="dateTo"/>
+        </div>
+        <div>
+            <s:text name="form.importeIVA.message"/>
+            <s:property value="%{importe * 1.21}"/>
+        </div>
+        </s:push>
 
 </body>
 </html>
